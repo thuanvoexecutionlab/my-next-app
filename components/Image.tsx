@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import * as React from 'react';
+import React, {useState} from 'react';
+import { useSpring, animated, config } from 'react-spring';
 
 export interface IImageProps {
     src: string;
@@ -9,9 +10,21 @@ export interface IImageProps {
 }
 
 export default function ImageApp(props: IImageProps) {
+
+  const styleProps = useSpring({
+    loop: true,
+    to: [
+      { opacity: 1 },
+      { opacity: 0.5 },
+    ],
+    from: { opacity: 0.5 },
+  })
   return (
-    <div>
+    <>
+      <animated.div style={styleProps} >
           <Image src={props.src} alt={props.alt} width={props.width} height={props.height} />
-    </div>
+    </animated.div>
+    </>
+   
   );
 }
