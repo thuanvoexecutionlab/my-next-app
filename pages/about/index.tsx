@@ -2,6 +2,8 @@ import Head from 'next/head';
 import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import styles from './About.module.css';
+import Title from '../../components/Title';
+import ImageApp from '../../components/Image';
 
 export interface IAboutPageProps {
    
@@ -29,8 +31,8 @@ export default function AboutPage(props: IAboutPageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-      {num > 0 && <h1>{num}</h1>
-          || <Image
+        {num > 0 && <Title title={""+num} />
+          || <ImageApp
                 src="/heart.png"
                 alt="Picture of the author"
                 width={500}
