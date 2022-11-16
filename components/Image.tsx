@@ -5,8 +5,6 @@ import { useSpring, animated, config } from 'react-spring';
 export interface IImageProps {
     src: string;
     alt: string;
-    width: number;
-    height: number;
 }
 
 export default function ImageApp(props: IImageProps) {
@@ -22,9 +20,8 @@ export default function ImageApp(props: IImageProps) {
   return (
     <>
       <animated.div style={styleProps} >
-          <Image src={props.src} alt={props.alt} width={props.width} height={props.height} />
-    </animated.div>
+        <Image src={props.src} alt={props.alt} width={200} height={200} />
+      </animated.div>
     </>
-   
   );
 }

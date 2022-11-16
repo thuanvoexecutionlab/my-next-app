@@ -35,8 +35,6 @@ export default function AboutPage(props: IAboutPageProps) {
           || <ImageApp
                 src="/heart.png"
                 alt="Picture of the author"
-                width={500}
-                height={500}
               />
         }
       </main>
