@@ -1,0 +1,44 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "ProX Watch",
+      "price": 20
+    },
+    {
+      "id": 2,
+      "name": "Magic Pencil",
+      "price": 2
+    },
+    {
+      "id": 3,
+      "name": "RevPro Wallet",
+      "price": 15
+    },
+    {
+      "id": 4,
+      "name": "Rice Cooker",
+      "price": 25
+    },
+    {
+      "id": 5,
+      "name": "CookToday Oven",
+      "price": 10
+    },
+    {
+      "id": 6,
+      "name": "Ryan",
+      "price": 100
+    },
+    {
+      "id": 7,
+      "name": "Hello",
+      "price": 333
+    },
+    {
+      "id": 8,
+      "name": "hu",
+      "price": 10
+    }
+  ]
+}
