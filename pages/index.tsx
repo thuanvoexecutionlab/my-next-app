@@ -9,29 +9,27 @@ export default function Home() {
     <div className={styles.container}>
       <NextSeo
         title="Ryan App"
-        description="This is my description"
+        description="Product Management"
         canonical="https://www.canonical.ie/"
         openGraph={{
           url: 'https://www.url.ie/a',
-          title: 'Open Graph Title',
-          description: 'Open Graph Description',
+          title: 'Ryan App',
+          description: 'Product Management',
           images: [
             {
-              url: 'https://www.example.ie/og-image-01.jpg',
+              url: '/avatar.png',
               width: 800,
               height: 600,
-              alt: 'Og Image Alt',
+              alt: 'Image Alt',
             },
             {
-              url: 'https://www.example.ie/og-image-02.jpg',
+              url: '/avatar.png',
               width: 900,
               height: 800,
-              alt: 'Og Image Alt Second',
+              alt: 'Image Alt',
             },
-            { url: 'https://www.example.ie/og-image-03.jpg' },
-            { url: 'https://www.example.ie/og-image-04.jpg' },
           ],
-          site_name: 'SiteName',
+          site_name: 'Ryan App',
         }}
         twitter={{
           handle: '@handle',
