@@ -31,14 +31,6 @@ export default function MainPage(props: IMainPageProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-         <div className={styles.menuBar}>
-          <div
-            onClick={goToList}
-            className={mode === 'list' ? styles.selected : ''}>All products</div>
-          <div
-            onClick={goToCreate}
-            className={mode === 'add' ? styles.selected : ''}>Add product</div>
-        </div>
         <Title title={title} />
         { mode === 'list' ? <Products/> :
           <AddProduct goToList={() => setMode('list')} />}

@@ -40,5 +40,28 @@
       "name": "hu",
       "price": 10
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Ryan",
+      "email": "admin",
+      "password": "admin",
+      "age": 20
+    },
+    {
+      "id": 2,
+      "name": "John",
+      "email": "john",
+      "password": "john",
+      "age": 30
+    },
+    {
+      "email": "ryanvo.0162@gmail.com",
+      "name": "Ryan Vo",
+      "age": 22,
+      "password": "123",
+      "id": 5
+    }
   ]
 }

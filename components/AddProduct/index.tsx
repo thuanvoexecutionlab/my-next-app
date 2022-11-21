@@ -1,57 +1,74 @@
-import axios from 'axios';
-import React,{useState} from 'react';
-import { useProducts } from '../Products';
+import React, { useState } from "react";
+import { addProduct, useProducts } from "../../database";
 
 export interface IAddProductProps {
   goToList: any;
 }
 
-async function addProduct(product:any) {
-  let response = await axios.post('/products', product);
-  return response.data;
-}
-
 export default function AddProduct(props: IAddProductProps) {
-  const {goToList} = props;
+  const { goToList } = props;
   const { products, mutate } = useProducts();
   const [product, setProduct] = useState({
-    id: products.length + 1,
-    name: '',
-    price: null
+    product_name: "",
+    description: "",
+    price: 0,
+    image_url: "",
   });
   const [disabled, setDisabled] = useState(true);
 
   async function handleAdd() {
-    goToList();
-    mutate(async () => {
-      return [...products, await addProduct(product)]
-    }, { optimisticData: [...products, product], rollbackOnError: true, revalidate: false } );
+    let response = await addProduct(product);
+    if (response.success) {
+      mutate();
+      goToList();
+    }
   }
 
-  function handleFieldUpdate(e:any) {
-    const element = e.target;
-    const value = element.type === 'number' ? parseInt(element.value) : element.value;
-    const nextProduct = {...product, [element.name]: value};
-
-    setProduct(nextProduct);
-    setDisabled(!nextProduct.name || !nextProduct.price);
+  function handleFieldUpdate(e: any) {
+    setProduct({
+      ...product,
+      [e.target.name]: e.target.value,
+    });
+    setDisabled(
+      !product.product_name ||
+        !product.description ||
+        !product.price ||
+        !product.image_url
+    );
   }
-    
+  console.log(product);
+
   return (
     <div>
       <input
         type="text"
-        name="name"
+        name="product_name"
         placeholder="Name"
         autoFocus
-        onChange={handleFieldUpdate}/>
+        onChange={handleFieldUpdate}
+      />
       <input
         type="number"
         name="price"
         min="1"
         placeholder="Price"
-        onChange={handleFieldUpdate}/>
-      <button onClick={handleAdd} disabled={disabled}>Add</button>
+        onChange={handleFieldUpdate}
+      />
+      <input
+        type="text"
+        name="description"
+        placeholder="Description"
+        onChange={handleFieldUpdate}
+      />
+      <input
+        type="text"
+        name="image_url"
+        placeholder="Image URL"
+        onChange={handleFieldUpdate}
+      />
+      <button onClick={handleAdd} disabled={disabled}>
+        Add
+      </button>
     </div>
   );
 }

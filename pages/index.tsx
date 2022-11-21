@@ -30,7 +30,7 @@ export default function Home() {
           <Link href={{
             pathname: '/main',
           }} className={styles.card}>
-              <h2>useSWR</h2>          
+              <h2>Product Management</h2>          
           </Link>
         </div>
     
