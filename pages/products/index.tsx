@@ -4,29 +4,23 @@ import styles from './main.module.sass';
 import Title from '../../components/Title';
 import Products from '../../components/Products';
 
-export interface IMainPageProps {
-   
-}
+export interface IProductsProps {}
 
-export default function MainPage(props: IMainPageProps) {
-
-  const [title, setTitle] = useState('Products');
+export default function ProductsPage(props: IProductsProps) {
+  const [title, setTitle] = useState("Products");
 
   return (
     <div>
       <Head>
-        <title>Main Page</title>
+        <title>Products Page</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
         <Title title={title} />
-        <Products/>
+        <Products />
       </main>
-      <footer className={styles.footer}>
-        Tính năng đang phát triển
-      </footer>
+      <footer className={styles.footer}>Tính năng đang phát triển</footer>
     </div>
-      
   );
 }
 

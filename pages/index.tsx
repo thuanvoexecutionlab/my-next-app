@@ -58,7 +58,7 @@ export default function Home() {
           </Link>
           <Link
             href={{
-              pathname: "/main",
+              pathname: "/products",
             }}
             className={styles.card}
           >

@@ -21,6 +21,11 @@ export async function updateProduct(product: any) {
     return response.data;
 }
 
+export async function getProduct(id: string) {
+  let response = await axios.get(`/product/${id}`);
+  return response.data;
+}
+
 export const useProducts = () => {
   const { data, error, mutate } = useSWR("/products", fetcher);
   return {

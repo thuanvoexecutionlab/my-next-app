@@ -18,7 +18,8 @@ import {
   updateProduct,
   useProducts,
 } from "../../database";
-import { error } from "console";
+import { useRouter } from "next/router";
+import path from "node:path/win32";
 
 export interface IProductsProps {}
 
@@ -41,8 +42,8 @@ export default function Products(props: IProductsProps) {
   const { products, isLoading, isError, mutate } = useProducts();
   const [open, setOpen] = useState(false);
   const [titleModal, setTitleModal] = useState("");
-
   const [editProduct, setEditProduct] = useState<IProductData | null>(null);
+  const router = useRouter();
 
   if (isError) return <div>Unable to fetch products.</div>;
 
@@ -66,6 +67,15 @@ export default function Products(props: IProductsProps) {
 
   const handleClose = () => setOpen(false);
 
+  const handleGoTo = (id: string) => {
+    router.push(
+      {
+        pathname: "/products/[id]",
+        query: { id },
+      },
+    );
+  };
+
   return (
     <>
       <div>
@@ -87,6 +97,11 @@ export default function Products(props: IProductsProps) {
                 </div>
                 <p>Create at: {formatDate(product.created_at)}</p>
                 <p>Update at: {formatDate(product.updated_at)}</p>
+                <Button
+                  onClick={() => handleGoTo(product._id)}
+                >
+                  Details
+                </Button>
                 <Button
                   onClick={handleOpen.bind(null, product, "Edit Product")}
                 >
