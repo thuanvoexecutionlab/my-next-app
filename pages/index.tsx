@@ -12,29 +12,29 @@ export default function Home() {
         description="Product Management"
         canonical="https://www.canonical.ie/"
         openGraph={{
-          url: 'https://www.url.ie/a',
-          title: 'Ryan App',
-          description: 'Product Management',
+          url: "https://my-next-app-six-psi.vercel.app/",
+          title: "Ryan App",
+          description: "Product Management",
           images: [
             {
-              url: '/avatar.png',
+              url: "/avatar.png",
               width: 800,
               height: 600,
-              alt: 'Image Alt',
+              alt: "Image Alt",
             },
             {
-              url: '/avatar.png',
+              url: "/avatar.png",
               width: 900,
               height: 800,
-              alt: 'Image Alt',
+              alt: "Image Alt",
             },
           ],
-          site_name: 'Ryan App',
+          site_name: "Ryan App",
         }}
         twitter={{
-          handle: '@handle',
-          site: '@site',
-          cardType: 'summary_large_image',
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
         }}
       />
 
@@ -48,18 +48,23 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <Link href={{
-            pathname: '/about',
-          }} className={styles.card}>
-              <h2>Click Here</h2>          
+          <Link
+            href={{
+              pathname: "/about",
+            }}
+            className={styles.card}
+          >
+            <h2>Click Here</h2>
           </Link>
-          <Link href={{
-            pathname: '/main',
-          }} className={styles.card}>
-              <h2>Product Management</h2>          
+          <Link
+            href={{
+              pathname: "/main",
+            }}
+            className={styles.card}
+          >
+            <h2>Product Management</h2>
           </Link>
         </div>
-    
       </main>
 
       <footer className={styles.footer}>
@@ -68,12 +73,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
