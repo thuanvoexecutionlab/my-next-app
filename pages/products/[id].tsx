@@ -47,6 +47,12 @@ export default function ProductDetail(props: IProductDetailProps) {
               alt: product.product_name,
             },
           ],
+          site_name: product.product_name,
+        }}
+        twitter={{
+          handle: "@handle",
+          site: "@site",
+          cardType: "summary_large_image",
         }}
       />
 
