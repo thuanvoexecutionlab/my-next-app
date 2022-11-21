@@ -36,6 +36,7 @@ export default function ProductDetail(props: IProductDetailProps) {
       <NextSeo
         title={product.product_name}
         description={product.description}
+        canonical="https://www.canonical.ie/"
         openGraph={{
           title: product.product_name,
           description: product.description,
