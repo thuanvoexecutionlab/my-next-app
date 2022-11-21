@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { formatDate } from "../../functions/format";
 import { getProduct } from "../../database";
 import { Item } from "../../components/Products/styles";
 import { NextSeo } from "next-seo";
@@ -76,4 +75,11 @@ export default function ProductDetail(props: IProductDetailProps) {
       </div>
     </>
   );
+}
+
+export async function getServerSideProps(context: any) {
+  const { id } = context.query;
+  return {
+    props: { id },
+  };
 }
