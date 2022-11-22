@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { getProduct } from "../../database";
 import { Item } from "../../components/Products/styles";
 import { NextSeo } from "next-seo";
 import Image from "next/image";
-import { useRouter } from "next/router";
 
 export interface IProductDetailProps {
   data: any;
@@ -11,27 +10,6 @@ export interface IProductDetailProps {
 
 export default function ProductDetail(props: IProductDetailProps) {
   const { data } = props;
-  console.log(data);
-  // const router = useRouter();
-
-  // const { id } = router.query;
-  // const [product, setProduct] = useState({
-  //   _id: "",
-  //   product_name: "",
-  //   description: "",
-  //   price: 0,
-  //   image_url: "",
-  // });
-
-  // useEffect(() => {
-  //   const getProductDetail = async () => {
-  //     const response = await getProduct(id as string);
-  //     if (response.success) {
-  //       setProduct(response.data);
-  //     }
-  //   };
-  //   getProductDetail();
-  // }, [id]);
 
   return (
     <>
