@@ -62,6 +62,27 @@
       "age": 22,
       "password": "123",
       "id": 5
+    },
+    {
+      "email": "ryanvo.012@gmail.com",
+      "name": "Ryan Vo",
+      "age": 22,
+      "password": "123",
+      "id": 6
+    },
+    {
+      "email": "ryanvo.012@gmail.com",
+      "name": "Ryan Vo",
+      "age": 22,
+      "password": "123",
+      "id": 7
+    },
+    {
+      "email": "Thuan",
+      "password": "123",
+      "name": "Ryan",
+      "age": "22",
+      "id": 8
     }
   ]
 }
